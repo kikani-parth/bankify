@@ -4,6 +4,8 @@ import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import Header from '../components/Header';
 import SmartWaysCard from '../components/SmartWaysCard';
+import TransactionsList from '../components/TransactionsList';
+import Spacer from '../components/Spacer';
 
 const HomeScreen = () => {
   return (
@@ -11,6 +13,8 @@ const HomeScreen = () => {
       <Image source={require('../../assets/sky.jpg')} style={styles.image} />
       <Header />
       <SmartWaysCard />
+      <Spacer />
+      <TransactionsList />
     </>
   );
 };
