@@ -5,13 +5,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './src/screens/HomeScreen';
 import CategoryScreen from './src/screens/CategoryScreen';
 
-const Stack = createStackNavigator(); // Create the stack navigator
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="HomeScreen">
-        {/* Define screens here */}
         <Stack.Screen
           name="HomeScreen"
           component={HomeScreen}
