@@ -3,6 +3,9 @@ import zaraLogo from './assets/zara_logo.png';
 import fortumLogo from './assets/fortum_logo.png';
 import kMarketLogo from './assets/k-market_logo.png';
 import hslLogo from './assets/hsl_logo.png';
+import burgerKingLogo from './assets/burger_king_logo.png';
+import hesburgerLogo from './assets/hesburger_logo.png';
+import dominosLogo from './assets/dominos_logo.png';
 
 export const transactions = [
   {
@@ -56,6 +59,34 @@ const mobilityTranscations = [
     id: '1',
   },
 ];
+
+const foodTransactions = [
+  {
+    name: 'Hesburger',
+    amount: '-30.00€',
+    co2: '50 Kg',
+    date: '08.10.2024',
+    logo: hesburgerLogo,
+    id: '1',
+  },
+  {
+    name: 'Burger King',
+    amount: '-23.99€',
+    co2: '65 Kg',
+    date: '09.10.2024',
+    logo: burgerKingLogo,
+    id: '2',
+  },
+  {
+    name: "Domino's Pizza",
+    amount: '-40.00€',
+    co2: '80 Kg',
+    date: '10.10.2024',
+    logo: dominosLogo,
+    id: '3',
+  },
+];
+
 export const categories = [
   {
     id: '1',
@@ -71,12 +102,13 @@ export const categories = [
   {
     id: '2',
     name: 'Food',
-    co2: '100 Kg',
+    co2: '195 Kg',
     logo: {
       name: 'fastfood',
       size: 26,
       color: '#D27D2D',
     },
+    transactions: foodTransactions,
   },
   {
     id: '3',
