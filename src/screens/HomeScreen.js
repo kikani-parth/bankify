@@ -1,3 +1,5 @@
+// HomeScreen.js
+
 import React, { useState } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 import Header from '../components/Header';

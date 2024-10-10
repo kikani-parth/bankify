@@ -1,11 +1,18 @@
 import React from 'react';
 import { StyleSheet, View, Text, Platform } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 
 const CategoryDetail = ({ category }) => {
   return (
     <View style={styles.categoriesContainer}>
       <View style={styles.categoryNameAndLogoContainer}>
-        <View style={styles.logoContainer}>{category.logo}</View>
+        <View style={styles.logoContainer}>
+          <MaterialIcons
+            name={category.logo.name}
+            size={category.logo.size}
+            color={category.logo.color}
+          />
+        </View>
         <View>
           <Text style={styles.name}>{category.name}</Text>
         </View>

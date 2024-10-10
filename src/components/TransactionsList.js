@@ -15,7 +15,7 @@ const TransactionsList = () => {
       co2: '17 Kg',
       date: '09.10.2024',
       logo: zaraLogo,
-      id: 1,
+      id: '1',
     },
     {
       name: 'Fortum Energy',
@@ -23,7 +23,7 @@ const TransactionsList = () => {
       co2: '66 Kg',
       date: '08.10.2024',
       logo: fortumLogo,
-      id: 2,
+      id: '2',
     },
     {
       name: 'K-Citymarket Kamppi',
@@ -31,7 +31,7 @@ const TransactionsList = () => {
       co2: '13 Kg',
       date: '07.10.2024',
       logo: kMarketLogo,
-      id: 3,
+      id: '3',
     },
     {
       name: 'Zara Kamppi',
@@ -39,7 +39,7 @@ const TransactionsList = () => {
       co2: '16 Kg',
       date: '07.10.2024',
       logo: zaraLogo,
-      id: 4,
+      id: '4',
     },
     {
       name: 'K-Citymarket Kamppi',
@@ -47,7 +47,7 @@ const TransactionsList = () => {
       co2: '12 Kg',
       date: '06.10.2024',
       logo: kMarketLogo,
-      id: 5,
+      id: '5',
     },
   ];
 
