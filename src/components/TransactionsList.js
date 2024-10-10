@@ -1,17 +1,11 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  FlatList,
-  StyleSheet,
-  Image,
-  Platform,
-} from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 
 // Import logos
 import zaraLogo from '../../assets/zara_logo.png';
 import fortumLogo from '../../assets/fortum_logo.png';
 import kMarketLogo from '../../assets/k-market_logo.png';
+import TransactionDetail from './TransactionDetail';
 
 const TransactionsList = () => {
   const transactions = [
@@ -62,82 +56,11 @@ const TransactionsList = () => {
       showsVerticalScrollIndicator={false}
       data={transactions}
       keyExtractor={(item) => item.id}
-      renderItem={({ item }) => (
-        <View style={styles.transactionContainer}>
-          <View style={styles.transactionNameAndLogoContainer}>
-            <View style={styles.logoContainer}>
-              <Image
-                source={item.logo}
-                style={styles.logo}
-                resizeMode="contain"
-              />
-            </View>
-            <View>
-              <Text style={styles.name}>{item.name}</Text>
-              <Text style={styles.date}>{item.date}</Text>
-            </View>
-          </View>
-          <View>
-            <Text style={styles.amount}>{item.amount}</Text>
-            <Text>
-              <Text style={styles.co2}>{item.co2}</Text> CO2e
-            </Text>
-          </View>
-        </View>
-      )}
+      renderItem={({ item }) => <TransactionDetail transaction={item} />}
     />
   );
 };
 
-const styles = StyleSheet.create({
-  transactionContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: 10,
-  },
-  transactionNameAndLogoContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  logoContainer: {
-    // Shadow for iOS
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 5 },
-    shadowOpacity: 0.13,
-    shadowRadius: 10,
-
-    // Elevation for Android
-    ...Platform.select({
-      android: {
-        elevation: 8,
-      },
-    }),
-
-    // borderWidth: 1,
-    marginRight: 15,
-    borderRadius: 30,
-    backgroundColor: '#fff',
-    padding: 5,
-  },
-  logo: {
-    width: 50,
-    height: 50,
-  },
-  name: {
-    fontWeight: 'bold',
-    fontSize: 15,
-  },
-  date: {
-    color: 'gray',
-  },
-  amount: {
-    alignSelf: 'flex-end',
-    color: 'gray',
-  },
-  co2: {
-    fontWeight: 'bold',
-  },
-});
+const styles = StyleSheet.create({});
 
 export default TransactionsList;
