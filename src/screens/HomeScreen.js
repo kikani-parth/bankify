@@ -1,22 +1,27 @@
-// HomeScreen.js
-
-import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Image, StyleSheet, View } from 'react-native';
 import Header from '../components/Header';
 import SmartWaysCard from '../components/SmartWaysCard';
 import TransactionsList from '../components/TransactionsList';
 import Spacer from '../components/Spacer';
 import CategoriesList from '../components/CategoriesList';
+import ToggleButtons from '../components/ToggleButtons';
 
 const HomeScreen = () => {
+  const [activeTab, setActiveTab] = useState('categories'); // Track the active tab
+
   return (
     <>
       <Image source={require('../../assets/sky.jpg')} style={styles.image} />
       <Header />
       <SmartWaysCard />
       <Spacer />
-      <CategoriesList />
-      {/* <TransactionsList /> */}
+
+      {/* Render the tabs */}
+      <ToggleButtons activeTab={activeTab} onPressTab={setActiveTab} />
+
+      {/* Render CategoriesList or TransactionsList based on the active tab */}
+      {activeTab === 'categories' ? <CategoriesList /> : <TransactionsList />}
     </>
   );
 };
