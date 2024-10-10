@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import SmartWaysCard from '../components/SmartWaysCard';
 import TransactionsList from '../components/TransactionsList';
 import Spacer from '../components/Spacer';
+import CategoriesList from '../components/CategoriesList';
 
 const HomeScreen = () => {
   return (
@@ -14,7 +15,8 @@ const HomeScreen = () => {
       <Header />
       <SmartWaysCard />
       <Spacer />
-      <TransactionsList />
+      <CategoriesList />
+      {/* <TransactionsList /> */}
     </>
   );
 };
