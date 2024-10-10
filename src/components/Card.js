@@ -1,19 +1,13 @@
 import React from 'react';
-import { View, Image, Text, StyleSheet, Platform } from 'react-native';
+import { StyleSheet, Platform, View, Text, Image } from 'react-native';
 
-const SmartWaysCard = () => {
+const Card = ({ imgSource, heading, content }) => {
   return (
     <View style={styles.container}>
-      <Image
-        source={require('../../assets/plant.jpg')}
-        style={styles.image}
-        resizeMode="contain"
-      />
+      <Image source={imgSource} style={styles.image} resizeMode="contain" />
       <View style={styles.textContainer}>
-        <Text style={styles.heading}>#100smartways</Text>
-        <Text style={styles.textContent}>
-          Discover 100 smart ways to live more sustainable
-        </Text>
+        <Text style={styles.heading}>{heading}</Text>
+        <Text style={styles.content}>{content}</Text>
       </View>
     </View>
   );
@@ -26,9 +20,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 10,
     marginHorizontal: 10,
+    marginVertical: 10,
     backgroundColor: '#fff',
-    position: 'absolute',
-    top: 330,
 
     // Shadow for iOS
     shadowColor: '#000',
@@ -56,9 +49,9 @@ const styles = StyleSheet.create({
     fontSize: 17,
     marginBottom: 10,
   },
-  textContent: {
+  content: {
     color: 'gray',
   },
 });
 
-export default SmartWaysCard;
+export default Card;

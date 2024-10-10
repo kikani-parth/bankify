@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, FlatList } from 'react-native';
 import TransactionsList from '../components/TransactionsList';
 import CategoryOverview from '../components/CategoryOverview';
-import SeeAllButton from '../components/SeeAllButton'; // Import the new button component
+import SeeAllButton from '../components/SeeAllButton';
+import Tips from '../components/Tips';
 
 const CategoryScreen = ({ route }) => {
   const { category } = route.params;
@@ -29,18 +30,31 @@ const CategoryScreen = ({ route }) => {
 
   return (
     <SafeAreaView>
-      <CategoryOverview category={category} />
-      <View style={styles.transactionsContainer}>
-        <Text style={styles.transactionsText}>Transactions</Text>
-        <TransactionsList listData={transactionsToShow} />
+      <FlatList
+        showsVerticalScrollIndicator={false}
+        data={transactionsToShow}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <TransactionsList listData={[item]} />}
+        ListHeaderComponent={
+          <>
+            <CategoryOverview category={category} />
+            <Text style={styles.transactionsText}>Transactions</Text>
+          </>
+        }
+        ListFooterComponent={
+          <>
+            {/* SEE ALL Button */}
+            {!showAllTransactions &&
+              category.transactions &&
+              category.transactions.length > 1 && (
+                <SeeAllButton onPress={toggleTransactions} />
+              )}
 
-        {/* SEE ALL Button */}
-        {!showAllTransactions &&
-          category.transactions &&
-          category.transactions.length > 1 && (
-            <SeeAllButton onPress={toggleTransactions} />
-          )}
-      </View>
+            {/* Render Tips component here */}
+            <Tips />
+          </>
+        }
+      />
     </SafeAreaView>
   );
 };

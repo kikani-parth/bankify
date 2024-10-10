@@ -1,4 +1,4 @@
-// Import logos
+// Import logos/images
 import zaraLogo from './assets/zara_logo.png';
 import fortumLogo from './assets/fortum_logo.png';
 import kMarketLogo from './assets/k-market_logo.png';
@@ -6,6 +6,8 @@ import hslLogo from './assets/hsl_logo.png';
 import burgerKingLogo from './assets/burger_king_logo.png';
 import hesburgerLogo from './assets/hesburger_logo.png';
 import dominosLogo from './assets/dominos_logo.png';
+import bikeImage from './assets/bike.png';
+import walkingImage from './assets/walking.png';
 
 export const transactions = [
   {
@@ -129,5 +131,21 @@ export const categories = [
       size: 26,
       color: '#097969',
     },
+  },
+];
+
+export const tips = [
+  {
+    id: '1',
+    img: bikeImage,
+    heading: "Don't drive, bike 10 days in a month",
+    content: 'Your carbon footprint will decrease by 144 kg',
+  },
+  {
+    id: '2',
+    img: walkingImage,
+    heading: 'Get fit and impact',
+    content:
+      'By walking 2km per week your carbon footprint will decrease by 1kg per week',
   },
 ];
