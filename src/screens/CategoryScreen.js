@@ -8,13 +8,14 @@ import CategoryOverview from '../components/CategoryOverview';
 
 const CategoryScreen = ({ route }) => {
   const { category } = route.params;
+  console.log(category);
 
   return (
     <SafeAreaView>
       <CategoryOverview category={category} />
       <View style={styles.transactionsContainer}>
         <Text style={styles.transactionsText}>Transactions</Text>
-        <TransactionsList />
+        <TransactionsList listData={category.transactions} />
       </View>
     </SafeAreaView>
   );

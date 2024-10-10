@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 5 },
     shadowOpacity: 0.13,
-    shadowRadius: 10,
+    shadowRadius: 5,
 
     // Elevation for Android
     ...Platform.select({

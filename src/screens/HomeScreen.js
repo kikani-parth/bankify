@@ -8,6 +8,7 @@ import TransactionsList from '../components/TransactionsList';
 import Spacer from '../components/Spacer';
 import CategoriesList from '../components/CategoriesList';
 import ToggleButtons from '../components/ToggleButtons';
+import { transactions, categories } from '../../_mockData';
 
 const HomeScreen = () => {
   const [activeTab, setActiveTab] = useState('categories'); // Track the active tab
@@ -23,7 +24,11 @@ const HomeScreen = () => {
       <ToggleButtons activeTab={activeTab} onPressTab={setActiveTab} />
 
       {/* Render CategoriesList or TransactionsList based on the active tab */}
-      {activeTab === 'categories' ? <CategoriesList /> : <TransactionsList />}
+      {activeTab === 'categories' ? (
+        <CategoriesList listData={categories} />
+      ) : (
+        <TransactionsList listData={transactions} />
+      )}
     </>
   );
 };
