@@ -4,8 +4,9 @@ import TransactionsList from '../components/TransactionsList';
 import CategoryOverview from '../components/CategoryOverview';
 import SeeAllButton from '../components/SeeAllButton';
 import Tips from '../components/Tips';
+import BackButton from '../components/BackButton';
 
-const CategoryScreen = ({ route }) => {
+const CategoryScreen = ({ route, navigation }) => {
   const { category } = route.params;
 
   const [showAllTransactions, setShowAllTransactions] = useState(false);
@@ -37,6 +38,7 @@ const CategoryScreen = ({ route }) => {
         renderItem={({ item }) => <TransactionsList listData={[item]} />}
         ListHeaderComponent={
           <>
+            <BackButton onPress={() => navigation.goBack()} />
             <CategoryOverview category={category} />
             <Text style={styles.transactionsText}>Transactions</Text>
           </>
@@ -50,7 +52,6 @@ const CategoryScreen = ({ route }) => {
                 <SeeAllButton onPress={toggleTransactions} />
               )}
 
-            {/* Render Tips component here */}
             <Tips />
           </>
         }
