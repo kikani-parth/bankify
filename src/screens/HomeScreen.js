@@ -9,6 +9,8 @@ import Spacer from '../components/Spacer';
 import CategoriesList from '../components/CategoriesList';
 import ToggleButtons from '../components/ToggleButtons';
 import { transactions, categories } from '../../_mockData';
+import CustomPieChart from '../components/CustomPieChart';
+// import CircularChart from '../components/CircularChart';
 
 const HomeScreen = () => {
   const [activeTab, setActiveTab] = useState('categories'); // Track the active tab
@@ -19,6 +21,8 @@ const HomeScreen = () => {
       <Header />
       <SmartWaysCard />
       <Spacer />
+      <CustomPieChart />
+      {/* <CircularChart /> */}
 
       {/* Render the tabs */}
       <ToggleButtons activeTab={activeTab} onPressTab={setActiveTab} />
