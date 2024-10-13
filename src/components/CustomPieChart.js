@@ -2,20 +2,21 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { PieChart } from 'react-native-svg-charts';
 import { G, Image, Text as SvgText } from 'react-native-svg';
-import foodIcon from '../../assets/food.png';
-import houseIcon from '../../assets/house.png';
-import airplaneIcon from '../../assets/airplane.png';
-import shoppingIcon from '../../assets/cart.png';
+import calculateTotalCo2e from '../utils/calculateTotalCo2e';
+import getColorByAmount from '../utils/getColorByAmount';
+import { monthlyEmission, iconMap } from '../../_mockData';
 
 const CustomPieChart = () => {
-  const monthlyEmission = [
-    { key: 1, amount: 150, svg: { fill: '#FFCC00' } },
-    { key: 2, amount: 195, svg: { fill: '#66BB6A' } },
-    { key: 3, amount: 100, svg: { fill: '#42A5F5' } },
-    { key: 4, amount: 200, svg: { fill: '#FFA726' } },
-  ];
+  // Map through the monthlyEmission array and add color based on amount
+  const updatedMonthlyEmission = monthlyEmission.map((item) => ({
+    ...item,
+    svg: { fill: getColorByAmount(item.amount) },
+  }));
 
-  const imageIcons = [airplaneIcon, foodIcon, shoppingIcon, houseIcon];
+  // Map the imageIcons based on the 'name' in monthlyEmission
+  const imageIcons = monthlyEmission.map((item) => iconMap[item.name]);
+
+  const totalAmount = calculateTotalCo2e(updatedMonthlyEmission);
 
   const Labels = ({ slices }) => {
     return slices.map((slice, index) => {
@@ -43,7 +44,7 @@ const CustomPieChart = () => {
         <PieChart
           style={{ height: '100%' }}
           valueAccessor={({ item }) => item.amount}
-          data={monthlyEmission}
+          data={updatedMonthlyEmission}
           spacing={0}
           innerRadius={'80%'}
         >
@@ -53,7 +54,7 @@ const CustomPieChart = () => {
         {/* Centered Text */}
         <View style={styles.centeredTextContainer}>
           <Text style={styles.centeredTextSmall}>THIS MONTH</Text>
-          <Text style={styles.centeredTextLarge}>480</Text>
+          <Text style={styles.centeredTextLarge}>{totalAmount}</Text>
           <Text style={styles.centeredTextSmall}>Kg CO2e</Text>
         </View>
       </View>

@@ -8,6 +8,10 @@ import hesburgerLogo from './assets/hesburger_logo.png';
 import dominosLogo from './assets/dominos_logo.png';
 import bikeImage from './assets/bike.png';
 import walkingImage from './assets/walking.png';
+import foodIcon from './assets/food.png';
+import houseIcon from './assets/house.png';
+import airplaneIcon from './assets/airplane.png';
+import shoppingIcon from './assets/cart.png';
 
 export const transactions = [
   {
@@ -149,3 +153,17 @@ export const tips = [
       'By walking 2km per week your carbon footprint will decrease by 1kg per week',
   },
 ];
+
+export const monthlyEmission = [
+  { key: 1, amount: 150, name: 'mobility' },
+  { key: 2, amount: 600, name: 'food' },
+  { key: 3, amount: 300, name: 'shopping' },
+  { key: 4, amount: 450, name: 'household' },
+];
+
+export const iconMap = {
+  mobility: airplaneIcon,
+  food: foodIcon,
+  shopping: shoppingIcon,
+  household: houseIcon,
+};
