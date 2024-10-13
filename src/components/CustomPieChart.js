@@ -5,6 +5,7 @@ import { G, Image, Text as SvgText } from 'react-native-svg';
 import calculateTotalCo2e from '../utils/calculateTotalCo2e';
 import getColorByAmount from '../utils/getColorByAmount';
 import { monthlyEmission, iconMap } from '../../_mockData';
+import calculateAvgCo2e from '../utils/calculateAvgCo2e';
 
 const CustomPieChart = () => {
   // Map through the monthlyEmission array and add color based on amount

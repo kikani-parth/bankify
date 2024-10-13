@@ -70,7 +70,7 @@ const foodTransactions = [
   {
     name: 'Hesburger',
     amount: '-30.00€',
-    co2: '50 Kg',
+    co2: '55 Kg',
     date: '08.10.2024',
     logo: hesburgerLogo,
     id: '1',
@@ -78,7 +78,7 @@ const foodTransactions = [
   {
     name: 'Burger King',
     amount: '-23.99€',
-    co2: '65 Kg',
+    co2: '70 Kg',
     date: '09.10.2024',
     logo: burgerKingLogo,
     id: '2',
@@ -86,7 +86,7 @@ const foodTransactions = [
   {
     name: "Domino's Pizza",
     amount: '-40.00€',
-    co2: '80 Kg',
+    co2: '85 Kg',
     date: '10.10.2024',
     logo: dominosLogo,
     id: '3',
@@ -108,7 +108,7 @@ export const categories = [
   {
     id: '2',
     name: 'Food',
-    co2: '195 Kg',
+    co2: '210 Kg',
     logo: {
       name: 'fastfood',
       size: 26,
@@ -119,7 +119,7 @@ export const categories = [
   {
     id: '3',
     name: 'Shopping',
-    co2: '100 Kg',
+    co2: '160 Kg',
     logo: {
       name: 'shopping-cart',
       size: 26,
@@ -129,7 +129,7 @@ export const categories = [
   {
     id: '4',
     name: 'Household',
-    co2: '200 Kg',
+    co2: '170 Kg',
     logo: {
       name: 'house',
       size: 26,
@@ -156,9 +156,9 @@ export const tips = [
 
 export const monthlyEmission = [
   { key: 1, amount: 150, name: 'mobility' },
-  { key: 2, amount: 600, name: 'food' },
-  { key: 3, amount: 300, name: 'shopping' },
-  { key: 4, amount: 450, name: 'household' },
+  { key: 2, amount: 210, name: 'food' },
+  { key: 3, amount: 160, name: 'shopping' },
+  { key: 4, amount: 170, name: 'household' },
 ];
 
 export const iconMap = {

@@ -1,8 +1,8 @@
 const getColorByAmount = (amount) => {
   console.log(amount);
-  if (amount <= 500) {
+  if (amount <= 200) {
     return '#66BB6A';
-  } else if (amount > 500 && amount <= 1000) {
+  } else if (amount > 200 && amount <= 400) {
     return '#FFCC00';
   } else {
     return '#FF0000';
