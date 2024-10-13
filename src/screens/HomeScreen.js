@@ -1,7 +1,7 @@
 // HomeScreen.js
 
 import React, { useState } from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 import Header from '../components/Header';
 import SmartWaysCard from '../components/SmartWaysCard';
 import TransactionsList from '../components/TransactionsList';
@@ -10,7 +10,6 @@ import CategoriesList from '../components/CategoriesList';
 import ToggleButtons from '../components/ToggleButtons';
 import { transactions, categories } from '../../_mockData';
 import CustomPieChart from '../components/CustomPieChart';
-// import CircularChart from '../components/CircularChart';
 
 const HomeScreen = () => {
   const [activeTab, setActiveTab] = useState('categories'); // Track the active tab
@@ -22,8 +21,6 @@ const HomeScreen = () => {
       <SmartWaysCard />
       <Spacer />
       <CustomPieChart />
-      {/* <CircularChart /> */}
-
       {/* Render the tabs */}
       <ToggleButtons activeTab={activeTab} onPressTab={setActiveTab} />
 

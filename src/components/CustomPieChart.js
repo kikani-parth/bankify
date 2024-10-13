@@ -1,11 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { PieChart } from 'react-native-svg-charts';
-import { G, Image, Text as SvgText } from 'react-native-svg';
+import { G, Image } from 'react-native-svg';
 import calculateTotalCo2e from '../utils/calculateTotalCo2e';
 import getColorByAmount from '../utils/getColorByAmount';
 import { monthlyEmission, iconMap } from '../../_mockData';
-import calculateAvgCo2e from '../utils/calculateAvgCo2e';
 
 const CustomPieChart = () => {
   // Map through the monthlyEmission array and add color based on amount
@@ -71,22 +70,17 @@ const CustomPieChart = () => {
 
 const styles = StyleSheet.create({
   container: {
-    // borderWidth: 1,
     position: 'absolute',
     top: 80,
     alignSelf: 'center',
   },
   chartContainer: {
-    // borderWidth: 1,
     height: 200,
     width: 300,
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
   centeredTextContainer: {
     position: 'absolute',
     alignItems: 'center',
-    // borderWidth: 1,
     alignSelf: 'center',
     top: 60,
   },

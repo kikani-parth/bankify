@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, FlatList } from 'react-native';
+import { Text, StyleSheet, SafeAreaView, FlatList } from 'react-native';
 import TransactionsList from '../components/TransactionsList';
 import CategoryOverview from '../components/CategoryOverview';
 import SeeAllButton from '../components/SeeAllButton';

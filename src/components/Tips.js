@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, ScrollView, FlatList } from 'react-native';
+import { StyleSheet, View, Text, FlatList } from 'react-native';
 import Card from './Card';
 import { tips } from '../../_mockData';
 
